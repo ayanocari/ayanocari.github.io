@@ -1,10 +1,14 @@
+<script>
+    import { base } from '$app/paths';
+</script>
+
 <div class="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
 <div id="banner" class="bg-gradient-to-b from-stone-50 to-stone-50">
     <div class=directory>
         <button type="button">Home</button>
         <button type="button">Projects</button>
-        <button type="button">Blog</button>
+        <a href="{base}/blog">Blog</a>
     </div>
 </div>
 
@@ -18,15 +22,15 @@
         <div class="social">
             
             <a href="https://www.linkedin.com/in/ayanocari/" target="blank">
-                <img src="/linkedin.svg" alt="Linkedin Icon via Bootstrap" width="32" height="32">
+                <img src="{base}/linkedin.svg" alt="Linkedin Icon via Bootstrap" width="32" height="32">
             </a>
 
             <a href="https://github.com/ayanocari" target="blank">
-                <img src="/github.svg" alt="Github Icon via Bootstrap" width="32" height="32">
+                <img src="{base}/github.svg" alt="Github Icon via Bootstrap" width="32" height="32">
             </a>
 
             <a href="mailto:nocariaya@gmail.com" target="blank">
-                <img src="/envelope.svg" alt="Envelope Icon via Bootstrap" width="32" height="32">
+                <img src="{base}/envelope.svg" alt="Envelope Icon via Bootstrap" width="32" height="32">
             </a>
 
         </div>
@@ -41,7 +45,14 @@
 
         <h2>Projects</h2>
         <div class = project>
-            <img src="/placeholder.jpg">
+            <img src="{base}/placeholder.jpg">
+            <div class = block>
+                <h3>project 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu nisl, congue et quam sed, aliquam viverra nisi. Sed ornare at dolor non vehicula.</p>
+            </div>
+        </div>
+        <div class = project>
+            <img src="{base}/placeholder.jpg">
             <div class = block>
                 <h3>project 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu nisl, congue et quam sed, aliquam viverra nisi. Sed ornare at dolor non vehicula.</p>
@@ -50,18 +61,52 @@
 
     </div>
 
+    <div class=block>
+        <h2>Blog</h2>
+        <div class = card-slider>
+            <div class = card>
+                <img src="{base}/placeholder.jpg">
+                <div class="card-text">title</div>
+                
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <style>
+
+    .card{
+        position:relative;
+        display:inline-block;
+    }
+
+    .card img{
+        display:block;
+        width:100%;
+        height: auto;
+    }
+    .card-text{
+        position: absolute;
+        top:0%;
+        padding:10%;
+        text-align: center;
+    }
 
     .project{
         display:flex;
         gap: 10px;
         flex-wrap:wrap;
+        
     }
 
     .project img{
-        
+        width: clamp(300px,30%, 200px);
+    }
+
+    .project .block{
+        flex:1;
+        min-width:150px;
     }
 
     .block{
@@ -73,6 +118,9 @@
     #main-content{
         margin-right:20vw;
         margin-left:20vw;
+        display:flex;
+        flex-direction:column;
+        gap: 15vh;
     }
 
     :root{
@@ -87,6 +135,8 @@
         display:flex;
         align-items:center;
         justify-content:center;
+
+        border-bottom:2px rgb(195, 194, 236) solid;
     }
 
     .directory{
