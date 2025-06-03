@@ -2,17 +2,13 @@
     import { base } from '$app/paths';
     import Card from '$lib/description-card.svelte'
     import Block from '$lib/text-block.svelte'
+    import Navbar from '$lib/navbar.svelte'
 </script>
+
+<Navbar isHomepage={true} />
 
 <div class="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
-<div id="banner" class="bg-gradient-to-b from-stone-50 to-stone-50">
-    <div class=directory>
-        <button type="button">Home</button>
-        <button type="button">Projects</button>
-        <a href="{base}/blog">Blog</a>
-    </div>
-</div>
 
 <div id="color-block" class="bg-gradient-to-b from-indigo-300 from-0% via-cyan-200 via-70% to-white-0 to-90%">
     
@@ -45,7 +41,11 @@
 
     <Block>
         <Card title="Hello" description="testing" img="{base}/placeholder.jpg"></Card>
-    </Block>   
+    </Block>  
+
+    <Block>
+        <Card title="Hello" description="testing" img="{base}/placeholder.jpg"></Card>
+    </Block>  
 
 </div>
 
@@ -78,24 +78,6 @@
 
     :root{
         --intro-height: 110vh;
-    }
-
-    #banner{
-        height:5vh;
-        width:100vw;
-        position:fixed;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        border-bottom:2px rgb(195, 194, 236) solid;
-    }
-
-    .directory{
-        display:flex;
-        gap: min(5vw, 60px);
-
     }
 
     #color-block{
