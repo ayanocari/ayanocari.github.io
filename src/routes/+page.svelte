@@ -1,5 +1,7 @@
-<script>
+<script lang='ts'>
     import { base } from '$app/paths';
+    import Card from '$lib/description-card.svelte'
+    import Block from '$lib/text-block.svelte'
 </script>
 
 <div class="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
@@ -41,36 +43,9 @@
 
 <div id="main-content">
 
-    <div class=block>
-
-        <h2>Projects</h2>
-        <div class = project>
-            <img src="{base}/placeholder.jpg">
-            <div class = block>
-                <h3>project 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu nisl, congue et quam sed, aliquam viverra nisi. Sed ornare at dolor non vehicula.</p>
-            </div>
-        </div>
-        <div class = project>
-            <img src="{base}/placeholder.jpg">
-            <div class = block>
-                <h3>project 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu nisl, congue et quam sed, aliquam viverra nisi. Sed ornare at dolor non vehicula.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class=block>
-        <h2>Blog</h2>
-        <div class = card-slider>
-            <div class = card>
-                <img src="{base}/placeholder.jpg">
-                <div class="card-text">title</div>
-                
-            </div>
-        </div>
-    </div>
+    <Block>
+        <Card title="Hello" description="testing" img="{base}/placeholder.jpg"></Card>
+    </Block>   
 
 </div>
 
@@ -91,28 +66,6 @@
         top:0%;
         padding:10%;
         text-align: center;
-    }
-
-    .project{
-        display:flex;
-        gap: 10px;
-        flex-wrap:wrap;
-        
-    }
-
-    .project img{
-        width: clamp(300px,30%, 200px);
-    }
-
-    .project .block{
-        flex:1;
-        min-width:150px;
-    }
-
-    .block{
-        display:flex;
-        flex-direction: column;
-        gap: 30px;
     }
 
     #main-content{
